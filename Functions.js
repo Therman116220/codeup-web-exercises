@@ -71,22 +71,22 @@
 
 // let canHaveADrink = (isAtBar && bac < .08 && age >= 21 && cashOnHand >= 5.00) // true && false && true && true --> false
 
-if (canHaveADrink) { // true or false
-    console.log("Have a brewski my guy!");
-} else { // it was not true
-    console.log("Sorry buddy, no brew for u");
-}
+//if (canHaveADrink) { // true or false
+//    console.log("Have a brewski my guy!");
+//} else { // it was not true
+//    console.log("Sorry buddy, no brew for u");
+//}
+//
+//let validId = true;
+//let ageValidation = 21;
+//let cashOnHand = 20.00;
 
-let validId = true;
-let ageValidation = 21;
-let cashOnHand = 20.00;
+//let canEnterClub = (ageValidation && cashOnHand >= 15.00 && validId)
 
-let canEnterClub = (ageValidation && cashOnHand >= 15.00 && validId)
-
-if (canEnterClub) {
-    console.log("Welcome valued customer");
-} else {
-    console.log("Sorry my friend");
+//if (canEnterClub) {
+//    console.log("Welcome valued customer");
+//} else {
+//    console.log("Sorry my friend");
 //
 
     "use strict";
@@ -102,10 +102,11 @@ if (canEnterClub) {
      */
 
     function sayHello(name) {
-        console.log(sayHello);
+        return sayHello + name + "!" ;
     }
+    console.log(sayHello("codeup"))
 
-    function financesSpentThisMonth(startingBalance, spentAmount) {
+    //   function financesSpentThisMonth(startingBalance, spentAmount) {
 //    return startingBalance - spentAmount;
 // }
 // console.log(
@@ -120,7 +121,8 @@ if (canEnterClub) {
      *
      * console.log 'helloMessage' to check your work
      */
-
+var helloMessage =sayHello("Therman")
+    console.log(helloMessage);
 
        /**
      * TODO:
@@ -128,7 +130,10 @@ if (canEnterClub) {
      * variable to the 'sayHello' function. You should see the same output in the
      * console.
      */
-
+var  myName = sayHello(myName)
+    {
+        console.log(sayHello)
+    }
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
     var random = Math.floor((Math.random() * 3) + 1);
@@ -150,6 +155,12 @@ if (canEnterClub) {
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function istwo(number) {
+    return number === 2;
+}
+console.log(istwo(random));
+
+
 
 /**
  * TODO:
@@ -162,15 +173,24 @@ if (canEnterClub) {
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-
+function calculateTip(tip, total) {
+    return (total * tip);
+}
+console.log(calculateTip(tipAmount: .2, totalBill: 100))
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+ let tipPercentage = prompt("What percentage")
+let calculateTip = prompt("What percentage is the tip? (1-100)")
+let totalBill = prompt("What is your total")
+let tipAmount = calculateTip(tipPercentage, totalBill)
+let newtotal = tipAmount + totalBill;
+alert("your tip amount is $" + tipAmount + "" + newtotal)
 /**
+ *
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
  * (before a discount is applied), and a discount percentage (a number between 0
@@ -184,4 +204,8 @@ if (canEnterClub) {
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+ function applyDiscount(price, discountPercentage) {
+     return price * (price * discountPercentage))
+}
 
+console.log(applyDiscount(price:100, discountPercentage: .2))
