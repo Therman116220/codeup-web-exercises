@@ -134,10 +134,10 @@ console.log(littleMermaid + brotherbear + hercules) * 3) ;
 
 
 // Exercise 4 contracter//
-let google = 400;
-let Amazon = 380;
-let Facebook = 350;
-console.log((Facebook * 10) + (google * 6) + (Amazon * 4));
+let googleapp = 400;
+let Amazonapp = 380;
+let Facebookapp = 350;
+console.log((Facebookapp * 10) + (googleapp * 6) + (Amazonapp * 4));
 
 
 
