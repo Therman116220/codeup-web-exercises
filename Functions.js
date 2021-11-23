@@ -1,10 +1,75 @@
-let isAtBar = true;
-let bac = .06;
-let age = 45;
-let cashOnHand = 5.00;
+//Function Practice//  Below is HM Exercise //
+
+//var cloudy = true;
+//var planes = planes >= 10;
+
+//function goodDayToFly( planes, cloudy ) {
+//    if (cloudy === true && planes) {
+//        console.log("Today might not be a good")
+//    } else {
+//        console.log("Your in the clear");
+//    }
+// }
+//goodDayToFly(false, 22)
 
 
-let canHaveADrink = (isAtBar && bac < .08 && age >= 21 && cashOnHand >= 5.00) // true && false && true && true --> false
+
+//function getFullName(firstName, lastName){
+//    return firstName + " " + lastName;
+//}
+
+//let fullName = getFullName("Thomas", "Fredricks");
+//console.log(fullName);
+
+//function dob(year, month, day){
+//    return year + month + day;
+// }
+//console.log(
+//    dob(2021, "Jan", 12)
+//);
+
+//function drinksToday(yesterday, today, tommorow) {
+//    return yesterday + today + tommorow;
+// }
+//console.log(
+//    drinksToday(2,2,2)
+// );
+
+// function financesSpentThisMonth(startingBalance, spentAmount) {
+//    return startingBalance - spentAmount;
+// }
+// console.log(
+//    financesSpentThisMonth(4000, 3000)
+// );
+
+//function product(numberOne, numberTwo){
+//    return numberOne * numberTwo;
+// }
+//console.log(
+//    product(1234, 5678)
+//);
+//function dividend(numberThree, numberFour) {
+//    return numberThree / numberFour;
+// }
+//console.log(
+//    dividend(1000, 500)
+// );
+// function remainder(numberFive, numberSix) {
+//    return numberFive % numberSix;
+// }
+//console.log(
+//    remainder(10, 2)
+// );
+
+
+
+// let isAtBar = true;
+// let bac = .06;
+// let age = 45;
+// let cashOnHand = 5.00;
+
+
+// let canHaveADrink = (isAtBar && bac < .08 && age >= 21 && cashOnHand >= 5.00) // true && false && true && true --> false
 
 if (canHaveADrink) { // true or false
     console.log("Have a brewski my guy!");
@@ -14,7 +79,7 @@ if (canHaveADrink) { // true or false
 
 let validId = true;
 let ageValidation = 21;
-let cashOnHand = 20.00
+let cashOnHand = 20.00;
 
 let canEnterClub = (ageValidation && cashOnHand >= 15.00 && validId)
 
@@ -22,7 +87,7 @@ if (canEnterClub) {
     console.log("Welcome valued customer");
 } else {
     console.log("Sorry my friend");
-
+//
 
     "use strict";
 
@@ -30,14 +95,24 @@ if (canEnterClub) {
      * TODO:
      * Create a function called 'sayHello' that takes a parameter 'name'.
      * When called, the function should return a message that says hello to the passed in name.
-     sayHello(name)
-     console.log
+     * sayHello(name)
+     * console.log
      * Example
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
-    var name = "Mike";
-    var sayHello(name);
-    console.log(sayHello);
+
+    function sayHello(name) {
+        console.log(sayHello);
+    }
+
+    function financesSpentThisMonth(startingBalance, spentAmount) {
+//    return startingBalance - spentAmount;
+// }
+// console.log(
+//    financesSpentThisMonth(4000, 3000)
+// );
+
+
     /**
      * TODO:
      * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -45,8 +120,9 @@ if (canEnterClub) {
      *
      * console.log 'helloMessage' to check your work
      */
-    var sayHello()
-    console.log(helloMessage)    /**
+
+
+       /**
      * TODO:
      * Store your name as a string in a variable named 'myName', and pass that
      * variable to the 'sayHello' function. You should see the same output in the
