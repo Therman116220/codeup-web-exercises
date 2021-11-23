@@ -143,10 +143,10 @@ console.log((Facebookapp * 10) + (googleapp * 6) + (Amazonapp * 4));
 
 // Exercise 4 contracter//
 
-var isNotFull = false;
-var doesNotConflict = true;
+var NotFull = false;
+var NoConflict = true;
 
-console.log(isNotFull && doesNotConflict) {
+console.log(NotFull && NoConflict) {
     console.log("Welcome")
 } else {
     console.log("You cant come in here")
