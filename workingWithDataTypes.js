@@ -130,7 +130,7 @@ console.log(sample + "class");
 let littleMermaid = 3;
 let brotherbear = 5;
 let hercules = 1;
-console.log(littleMermaid + brotherbear + hercules) * 3) ;
+console.log(littleMermaid + brotherbear + hercules) * 3);
 
 
 // Exercise 4 contracter//
