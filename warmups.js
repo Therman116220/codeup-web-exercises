@@ -244,28 +244,74 @@ switch (questionAnswer) {
         break;
 }
 console.log(option)
-
+/*
 
 var grade = 90
 var student;
 
-switch (student)
+switch (student);
+*/
+
+/*
+
+let calculator = function(num1, num2, calctype) {
+    if (calcType === "add"){
+        return num1 + num2;
+    } else if (calcType === "subtract"){
+        return  num1 - num2;
+    } else if (calcType === "multiply") {
+        return num1 * num2;
+    } else if (calctype === "divide") {
+        return num1 / num2;
+    } else if (calctype === "remainder") {
+        return num1 % num2;
+    }
+}
+console.log(calculator(1,1,"add"));
+
+let calc = function(num1, num2, calctype) {
+    switch (calctype === "add") {
+        case num1 + num2 : "Why add?"
+    }
+}
+*//* Write a function
+that accepts the top three bowling scores and
+     returns the average.
+    *Write a function that accepts the best score and returns true if its divisible by 3 or 5 and false if it’s not
+*Write a function that
+accepts the name of the bowling place (“ThEbEsTbOwLiNgPlAcEever”) and returns it in all lower case BONUS: write a function that returns “TheBestBowlingPlaceEver” and return it all lowercase with a space between each word
+*Given these variables: let score = 109; let name = “bowling Is Fun”; let isBowlingFun = true; let players = [“tom”, “jerry”, “Garfield”]; Write a function that returns the type of each of the variables (call the function once per variable);
+*Write a function that executes all of the above functions
+*Copy and execute the following functions, and find the Error: (Hint: try console logging the result) */
+    let firstScore = 120;
+    let secondScore = 234;
+    let thirdScore = 90;
+function bowling(score1, score2, score3) {
+    let average = (score1 + score2 +score3) /3;
+    return average;
 
 
+    console.log(bowling(firstScore, secondScore, thirdScore));
+}
 
 
+let score = 109;
+let name = "bowling is fun";
+let isBowlingFun = true;
+let players = ["tom, "jerry", "garfield"]
+function findType(passedVar) {
+    return typeof passedVar;
+}
+console.log(findType(isBowlingFun));
+score name players
+console.log(findType(score));
+console.log(findType(name));
+console.log(findType(players));
 
-
-
-
-
-
-
-
-
-
-
-
+function myFunction(firstName,lastName) {
+    return firstName + "" + lastName;
+};
+console.log(myFunction("Therman", "Haynes"));
 
 
 
