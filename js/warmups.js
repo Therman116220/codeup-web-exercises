@@ -148,7 +148,7 @@ console.log(desiredAge(48))
 
 */
 //let masterFolder = [fileBox, fileBoxTwo];
-
+/*
 let folderOne = "file1";
 let folderTwo = "file2";
 let folderThree = "file3";
@@ -176,3 +176,28 @@ console.log(nestingFunction(4, function (){
     console.log("Hi there from the nested function")
 }))
 nestingFunction(1)
+
+
+*/
+/*
+
+    let ages = [21,34, 56,  54, 22]
+let agesLength = ages.length;
+console.log(agesLength);
+for (let i = 0; i <= ages.length -1; i++) {
+    console.log([i] * 2);
+}
+
+
+*/
+
+let myPets = ["Aveline", "Duke", "Spooby", "Luna", "Honey", "Alex" ]
+
+console.log("before", myPets);
+
+myPets.unshift("spot");     ////Used for ---------
+console.log("after unshift", myPets);
+myPets.push("Asher");
+console.log("after push", myPets)
+myPets.pop("removing animal")
+console.log("after pop", myPets)
