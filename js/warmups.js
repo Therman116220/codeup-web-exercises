@@ -189,15 +189,71 @@ for (let i = 0; i <= ages.length -1; i++) {
 }
 
 
-*/
-
+*/ /*
 let myPets = ["Aveline", "Duke", "Spooby", "Luna", "Honey", "Alex" ]
 
 console.log("before", myPets);
 
-myPets.unshift("spot");     ////Used for ---------
+myPets.unshift("spot");     ////adds to end
 console.log("after unshift", myPets);
-myPets.push("Asher");
+myPets.push("Asher"); //
 console.log("after push", myPets)
-myPets.pop("removing animal")
+myPets.pop();
 console.log("after pop", myPets)
+myPets.shift();
+console.log("after shift", myPets)
+myPets.
+    */
+   // card Project Start "Card Game" var randomCards = ( var = [K, ]
+
+var K = 10
+var Q = 10
+var ten = 10
+var nine = 9
+var eight = 8
+var seven = 7
+var six = 6
+var five = 5
+var four = 4
+var three = 3
+var two = 2
+var one = 1
+
+  var cards = [K, Q, ten, nine, eight, seven, six, five, four, three, two, one ];
+
+var randomCards = cards[Math.floor(Math.random()*cards)];
+function game(randomCards) {
+    if (K) {
+        console.log(K);
+    } else if (Q) {
+        console.log(Q);
+    } else if (ten) {
+        console.log(ten);
+    } else if (nine) {
+        console.log(nine);
+    } else if (eight) {
+        console.log(eight);
+    } else if (seven) {
+        console.log(seven);
+    } else if (six) {
+        console.log(six);
+    } else if (five) {
+        console.log(five);
+    } else if (four) {
+        console.log(four);
+    } else if (three) {
+        console.log(three);
+    } else if (two) {
+        console.log(two);
+    } else if (one) {
+        console.log(one);
+    }
+
+}
+console.log(game(6));
+
+
+// *var chosenCards = Math.floor(Math.random(myCards));
+
+
+
