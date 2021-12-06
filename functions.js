@@ -1,4 +1,30 @@
-"use strict";
+function gradingScale(pointCount) {
+    if (pointCount > 90) {
+        console.log("A");
+    } else if (pointCount < 90 && pointCount >= 80) {
+        console.log("B");
+    } else if (pointCount < 80 && pointCount >= 70) {
+        console.log("C"); {
+        } else if (pointCount <70 && pointCount >= 60)
+            console.log("D"); {
+        } else
+        console.log("You failed")
+    }
+gradingScale(91);
+
+
+    if (hour < 12 && hour >= 6) {
+    console.log("Good Morning");
+    } else if (hour < 18 > && >= 12) {
+        console.log("Good Afternoon");
+    } else
+        console.log("Good Evening");
+}
+
+
+
+
+    "use strict";
 
 /**
  * TODO:
@@ -81,8 +107,9 @@ console.log(isTwo(random));
 
 function calculateTip(tipPercent, totalBill){
     return tipPercent*totalBill;
-}
 
+
+            }
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
