@@ -1,4 +1,30 @@
 
+
+
+
+
+
+//
+// let dog = {
+//     breed: "Pitbull",
+//     color: ["brown", "white", "black"],
+//     sex: "F",
+//     name: "Aveline",
+//     isFluffer: false,
+//     bark: function (loud,) {
+//         if (loud) {
+//             console.log("WOOF WOOF!!");
+//         } else {
+//             console.log("woof ");
+//         }
+//     },
+//     getDetails: function () {
+//         return this.color[0] + " " + this.breed + " named " + this.name;
+//     }
+// }
+// console.log(dog);
+//
+
 var human = {
 
     name: "Rick",
@@ -24,8 +50,8 @@ human.sleep();
 human.eat()
 
 
-
-var human2 = {
+var human2;
+human2 = {
 
     name: "Morty",
     age: 14,
@@ -39,19 +65,9 @@ var human2 = {
     sleep: function () {
         console.log("Morty is sleep");
     }
-}
+};
 
 console.log(human.drink());
-
-
-
-
-
-
-
-
-
-
 
 (function() {
     "use strict";
@@ -66,6 +82,12 @@ console.log(human.drink());
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    let person = {
+        lastName: "Haynes",
+        firstName: "Therman",
+    }
+    console.log(person.lastName);
+    console.log(person.firstName);
 
     /**
      * TODO:
@@ -76,7 +98,9 @@ console.log(human.drink());
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+ person.sayHello = function () {
+  return ("Hello" + person.firstName + person.lastName)
+ }
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -91,12 +115,23 @@ console.log(human.drink());
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
 
+var shoppers = [
+    {name: 'Cameron', amount: 180},
+    {name: 'Ryan', amount: 250},
+    {name: 'George', amount: 320}
+];
+ shoppers.forEach(function (shopper ) {
+    if (shopper.amount > 200) {
+        console.log("Congrats on the discount" + shopper.name);
+        console.log(shopper.amount + "-.12")
+        console.log(shopper.amount - (shopper.amount * .12));
+    } else {
+        console.log("No discount for" + shopper.name)
+    }
+    }
+
+)
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -109,6 +144,18 @@ console.log(human.drink());
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+let  Books = [
+
+        {book1: "To kill a mockingbird",  Author:{lastName:"Unknown" , firstName:"Unknown" }},
+        {book2: "Unwind",                 Author:{lastName:"Unknown" , firstName:"Unknown" }},
+        {book3: "Brave New World",        Author:{lastName:"Unknown" , firstName:"Unknown" }},
+        {book4: "Unwind",                 Author:{lastName:"Unknown" , firstName:"Unknown" }},
+        {book5: "Brave New World",        Author:{lastName:"Unknown" , firstName:"Unknown" }}
+    ]
+ console.log(Books);
+
+
+
 
     /**
      * TODO:
@@ -134,7 +181,20 @@ console.log(human.drink());
      *      ---
      *      ...
      */
+  Books.forEach(function(book,index) {
+      console.log(book1.Author)
+      console.log(book2.Author)
+      console.log(book3.Author)
+  })
 
+
+  /*  let books = [];
+    books.push(book1("Unknown", "Doug Adams"));
+    books.push(book2("Unknown", "Carrie Vaughn"))
+    books.push(book3("", "Ann McCaffery"));
+    books.push(book4("Kitty goes to Washington", "Carrie Vaughn"));
+    books.push(book5("How to Train Beagles", "Kathleen Weaver"));
+*/
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
