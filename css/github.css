@@ -1,0 +1,28 @@
+* {
+    font-family: Helvetica;
+}
+html, css {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    color: white;
+    border: solid black 2px;
+    background-color: black;
+    margin: 20px;
+    padding: 20px;
+    text-decoration: none;
+}
+.nav-two {
+    color: black;
+    border: solid #f3f3f3 2px;
+    background-color: #f3f3f3;
+    margin: 20px;
+    padding: 20px;
+    text-decoration: none;
+}
+a {
+    color: black;
+    text-align: center;
+    padding-left: 40px;
+}
