@@ -1,5 +1,5 @@
 .fancy-header {
-    color: purple; /* single line comment */
+    color: red; /* single line comment */
     text-decoration: underline;
     text-align: center;
 }
@@ -7,3 +7,7 @@
    color: lightcoral;
     text-decoration: underline;
 }
+ul li {
+    list-style: georgian;
+}
+

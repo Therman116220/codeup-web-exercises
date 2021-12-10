@@ -1,0 +1,28 @@
+.info {
+    background-color:lightskyblue ;
+    border: solid #f3f3f3 1px ;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+.success {
+    background-color:darkseagreen ;
+    border: solid #f3f3f3 1px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+.warning {
+    background-color: lightgoldenrodyellow ;
+    border: solid #f3f3f3 1px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+.error {
+    background-color: lightpink ;
+    border: solid #f3f3f3 1px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
