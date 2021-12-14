@@ -50,6 +50,9 @@ section {
     /* enter needed declarations here */
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-grow: 2;
 
 }
 
@@ -76,11 +79,11 @@ section:nth-of-type(1) div:last-child {
 }
 
 .purple-box:nth-of-type(1) {
-    /* enter needed declarations here */width: 202px;
+    /* enter needed declarations here */flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
-    /* enter needed declarations here */width: 118px;
+    /* enter needed declarations here */flex-grow: 1;
 }
 
 .blue-box {
@@ -90,11 +93,14 @@ section:nth-of-type(1) div:last-child {
 }
 
 section:nth-of-type(3) {
-    /* enter needed declarations here */display: flex;float: right;
+    /* enter needed declarations here */display: flex;
+    float: right;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
+    display: flex;
+
 
 }
 
@@ -104,34 +110,53 @@ section:nth-of-type(3) h3 {
     height: 2em;
     border-radius: 1em;
     margin: .5em;
+
 }
 
 .large-brown-box {
     height: 5em;
     width: 5em;
     background: brown;
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+    /*align-content: flex-end;*/
     /* enter needed declarations here */
-}
+    /*flex-grow: 1;*/
 
+}
 .large-brown-box:nth-of-type(2) {
     margin: 0 1em;
+
+
+
 }
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
-    display: flex;align-content: space-evenly;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+
+
 }
 
 .yellow-box {
     background: yellow;
     width: 2em;
     height: 2em;
+    display: flex;
+
+
 }
 
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
-    /* enter needed declarations here */display: flex;flex-wrap: wrap;justify-content: space-evenly; align-content: space-evenly;
+    /* enter needed declarations here */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
 }
 
 .grey-box {
