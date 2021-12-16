@@ -63,8 +63,10 @@ a:hover {
 	color: skyblue;
 }
 .section-left {
-display: flex;
-justify-content: flex-start;
+	margin: 15px;
+	padding: 15px;
+	display: flex;
+	justify-content: flex-start;
 
 
 }
@@ -76,6 +78,8 @@ justify-content: flex-start;
 }
 
 .section-right {
-display: flex;
-justify-content: flex-end;
+	margin: 15px;
+	padding: 15px;
+	display: flex;
+	justify-content: flex-end;
 }
