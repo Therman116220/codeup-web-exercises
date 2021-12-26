@@ -146,12 +146,13 @@ console.log((Facebookapp * 10) + (googleapp * 6) + (Amazonapp * 4));
 var NotFull = false;
 var NoConflict = true;
 
-console.log(NotFull && NoConflict) {
-    console.log("Welcome")
-} else {
+function blank (NotFull, NoConflict) {
+  if (true)
+   return console.log("Welcome")
+} else (false) {
     console.log("You cant come in here")
 }
-
+blank();
 
 // Exercise 5 Boolian//
 

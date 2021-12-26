@@ -298,11 +298,11 @@ function bowling(score1, score2, score3) {
 let score = 109;
 let name = "bowling is fun";
 let isBowlingFun = true;
-let players = ["tom, "jerry", "garfield"]
+let players = ["tom", "jerry", "garfield"];
 function findType(passedVar) {
     return typeof passedVar;
 }
-console.log(findType(isBowlingFun));
+console.log(findType(isBowlingFun))};
 score name players
 console.log(findType(score));
 console.log(findType(name));
