@@ -1,0 +1,59 @@
+
+.align-nav {
+    display: flex;
+    flex-direction: row;
+}
+button {
+  /*  display: flex;
+    flex-direction: row;*/
+    align-self: center;
+}
+.btn btn-outline-success my-2 my-sm-0 {
+    margin-right: 15px;
+}
+.jumbotron {
+    background-image: url("../css/order-pizza.css");
+    background-color: black;
+}
+.jumbotron:hover {
+    background-color: orange;
+}
+.container {
+    text-align: center;
+    font-size: 40px;
+    width: 100%;
+}
+.container P {
+    color: black;
+    border: solid white 2px;
+    background-color:ghostwhite;
+    opacity: 0.3;
+    width: 100%;
+}
+.container P:hover {
+    color: black;
+    border: solid white 2px;
+    background-color:ghostwhite;
+    opacity: 0.7;
+    width: 100%;
+}
+
+h1 {
+    text-align: left;
+}
+h1:hover {
+
+    text-align: right;
+}
+
+h2 {
+    text-align: left;
+    display: none;
+}
+h2:hover {
+
+    text-align: right;
+}
+.hidden {
+    display: none;
+}

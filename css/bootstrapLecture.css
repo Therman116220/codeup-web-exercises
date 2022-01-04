@@ -1,0 +1,21 @@
+.btn-primary {
+    color: darkcyan;
+    background-color: #0fb784;
+    border: solid black 7px;
+}
+button:hover {
+    transform: scale(1.1);
+
+}
+h1 {
+    text-align: center;
+}
+.p-header {
+    text-align: center;
+}
+.master-nav {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: solid grey 2px;
+}
