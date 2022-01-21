@@ -10,8 +10,6 @@
 <!--End Of Code -->
 
 
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,19 +18,20 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Konami Code</title>
-   &lt;!&ndash;CSS&ndash;&gt;
+    &lt;!&ndash;CSS&ndash;&gt;
     <style>
         h1:hover {
             color: yellow;
         }
-     /*   body {
-            background-image: url("");
-        }*/
+
+        /*   body {
+               background-image: url("");
+           }*/
     </style>
 </head>
 <body>
 <h1 style="color: cyan;">Konami Code</h1>
-
+<h2></h2>
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
@@ -40,19 +39,28 @@
 
     "use strict";
 
-    $(document).keyup(function(e){
+    $(document).keyup(function (e) {
         console.log(e.keyCode);
-        if(e.keyCode === (38 && 38 && 40 && 40 && 37 && 39 && 37 && 39 && 66 && 65)) {
+        if (e.keyCode === (38 && 38 && 40 && 40 && 37 && 39 && 37 && 39 && 66 && 65)) {
             alert("You Received $1,000,000 in GTA cash! ");
+
+            /* $('body').append('<img src="img/security.jpg" style="width: 100%">')*/
+            $('*').append('<p>lorem ipsum</p>')
+            $('body').css('background-color', '#f3f3f3');
+            $('*').css('font-family', 'Times New Roman');
+            $('h1').css('color', 'maroon')
+
+            $('h1').html("Changed this").css({"text-align": "center", "color": "darkcyan"})
+            $('body').append("<p style='font-family: AppleGothic'>Hello There</p>")
         } /*else if(event.keyCode === (38 && 40 && 37 && 39)) {
             alert("This code has been used in so many games!");}*/
     });
 
- //Styling //
- $('body').css('background-color','black');
- $('h1').css('text-align', 'center');
- $('h1').css('padding-top', '340px');
-/* $('h1:hover').css('color','gold');*/
+    //Styling //
+    $('body').css('background-color', 'black');
+    $('h1').css('text-align', 'center');
+    $('h1').css('padding-top', '340px');
+    /* $('h1:hover').css('color','gold');*/
 </script>
 
 </body>
