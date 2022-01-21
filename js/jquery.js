@@ -23,7 +23,9 @@ alert("The DOM has finished loading");
 
 
 
-
+$("heading").onclick(function(){
+    alert($("#heading").text("Wecome"))
+});
 
 
 

@@ -116,8 +116,8 @@ while (x < y; x++)
 
 
 
-    let foodThatMakesMeHungry = ["wing", "shrimp", "pizza", "barria tacos", "chilidogs", "nachos"]
-/*
+  /*  let foodThatMakesMeHungry = ["wing", "shrimp", "pizza", "barria tacos", "chilidogs", "nachos"]
+*//*
 console.log(foodThatMakesMeHungry.sort)
 console.log(foodThatMakesMeHungry[1])
 console.log(foodThatMakesMeHungry.reverse)
@@ -205,6 +205,7 @@ console.log("after shift", myPets)
 myPets.
     */
    // card Project Start "Card Game" var randomCards = ( var = [K, ]
+/*
 
 var K = 10
 var Q = 10
@@ -251,9 +252,30 @@ function game(randomCards) {
 
 }
 console.log(game(6));
+*/
 
 
 // *var chosenCards = Math.floor(Math.random(myCards));
 
 
 
+var a = "sTrInG"
+
+
+function(a) {
+    if (a[0] === a.toUpperCase()) {
+        console.log("Yes")
+    } else if (a[0] === a.toLowerCase()) {
+        console.log("Yes")
+    } else if (a[0] === a.toLowerCase()) {
+
+    }
+}
+$(document).ready(function(){
+    alert("")
+})
+
+
+$("heading").onclick(function(){
+    alert($)
+})
