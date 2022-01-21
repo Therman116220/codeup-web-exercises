@@ -258,6 +258,7 @@ console.log(game(6));
 // *var chosenCards = Math.floor(Math.random(myCards));
 
 
+/*
 
 var a = "sTrInG"
 
@@ -278,4 +279,4 @@ $(document).ready(function(){
 
 $("heading").onclick(function(){
     alert($)
-})
+})*/
