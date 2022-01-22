@@ -18,8 +18,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Konami Code</title>
-    &lt;!&ndash;CSS&ndash;&gt;
+
     <style>
+       .bg {
+
+       }
+        .loading-text {
+           font-size: 50px;
+           color: #fff;
+       }
         h1:hover {
             color: yellow;
         }
@@ -36,12 +43,25 @@
 
 <script>
     /* The Konami Code: Up, Up, Down, Down, Left, Right, Left, Right, B, A ( ↑ ↑ ↓ ↓ ← → ← → B A )*/
+    /*(document).onclick("h1").append('<p>Hint:Insert Konami Code</p>')*/
+   const loadText = document.querySelector('.loading-text')
+    const bg = document.querySelector('.bg')
+    let load = 0
+    let int = setInterval(blurring, 30)
 
+    function  blurring() {
+       load++
+        if (load > 99) {
+            clearInterval(int)
+        }
+        loadText.innerText = '${load}%'
+    }
     "use strict";
 
     $(document).keyup(function (e) {
         console.log(e.keyCode);
         if (e.keyCode === (38 && 38 && 40 && 40 && 37 && 39 && 37 && 39 && 66 && 65)) {
+
             alert("You Received $1,000,000 in GTA cash! ");
 
             /* $('body').append('<img src="img/security.jpg" style="width: 100%">')*/
