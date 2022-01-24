@@ -41,14 +41,44 @@
     <dd class="invisible">When a giant sequoia tree fell and blocked a road in Sequoia National Park in California in 1937, the National Park Service simply created a tunnel through the 275-foot by 21-foot tree.</dd>
 </dl>
 <button id="toggle">invisible</button>
+<h3>H3</h3>
+<ul>
+    <li style="font-weight: bolder">a</li>
+    <li>b</li>
+    <li>c</li>
+</ul>
 
+<h3>H3</h3>
+<ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ul>
+
+<h3>H3</h3>
+<ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ul>
 <script src="js/jquery-2.2.4.js"></script>
+
+
+<!--Javascript -->
 <script>
-        $(".invisible").click(function(){
+       /* $(".invisible").click(function(){
             $("dd").toggleClass("invisible")
+        });*/
+       $("#toggle").click(function () {
+          $(".invisible").css("display","none")
+       });
 
-
-    });
+        $("h3").click(function () {
+           $("li").css("font-weight","bolder")
+            $("li").css("color","brown")
+            $("h3").css("color","silver")
+            $("h3").css("font-family","Luxurious Roman, cursive")
+        });
 </script>
 </body>
 </html>
