@@ -43,7 +43,10 @@
 <script>
     /* The Konami Code: Up, Up, Down, Down, Left, Right, Left, Right, B, A ( ↑ ↑ ↓ ↓ ← → ← → B A )*/
     /*(document).onclick("h1").append('<p>Hint:Insert Konami Code</p>')*/
-   const loadText = document.querySelector('.loading-text')
+
+  //  Loading Screen   -Traversy Media "5 Projects" To Finish
+
+    /*  const loadText = document.querySelector('.loading-text')
     const bg = document.querySelector('.bg')
     let load = 0
     let int = setInterval(blurring, 30)
@@ -54,7 +57,7 @@
             clearInterval(int)
         }
         loadText.innerText = '${load}%'
-    }
+    }*/
     "use strict";
 
     $(document).keyup(function (e) {
@@ -63,14 +66,18 @@
 
             alert("You Received $1,000,000 in GTA cash! ");
 
-            /* $('body').append('<img src="img/security.jpg" style="width: 100%">')*/
+
             $('*').append('<p>lorem ipsum</p>')
-            $('body').css('background-image',:'url('img/img2.png')');
+            $('*').css('background-image','url(img/img2.png)');
             $('*').css('font-family', 'Times New Roman');
             $('h1').css('color', 'maroon')
+            $('*').css('background-size','cover')
 
             $('h1').html("Changed this").css({"text-align": "center", "color": "darkcyan"})
             $('body').append("<p style='font-family: AppleGothic'>Hello There</p>")
+
+
+       //Works but isn't seperate from other code//
         } /*else if(event.keyCode === (38 && 40 && 37 && 39)) {
             alert("This code has been used in so many games!");}*/
     });
