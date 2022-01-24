@@ -73,12 +73,16 @@
           $(".invisible").css("display","none")
        });
 
-        $("h3").click(function () {
+       $("h3").click(function () {
            $("li").css("font-weight","bolder")
             $("li").css("color","brown")
             $("h3").css("color","silver")
             $("h3").css("font-family","Luxurious Roman, cursive")
         });
+       //Grabs li, and using $('')first().css('','') change first li
+        $("li").click(function () {
+            $("li").first().css("color","blue")
+        })
 </script>
 </body>
 </html>
