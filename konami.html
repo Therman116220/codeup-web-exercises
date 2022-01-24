@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-<h1 style="color: #f3f3f3;">Konami Code</h1>
+<h1 id="heading" style="color: #f3f3f3;">Konami Code</h1>
 <h2></h2>
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -58,8 +58,12 @@
         }
         loadText.innerText = '${load}%'
     }*/
-    "use strict";
-
+    "use strict";                                                                        /*unused*/
+    $('#heading').click(function() {
+                                                                                      /*var heading = $('heading').html();
+                                                                                      alert(heading);*/
+        alert('Hint: Insert Konami Code Here');
+    });
     $(document).keyup(function (e) {
         console.log(e.keyCode);
         if (e.keyCode === (38 && 38 && 40 && 40 && 37 && 39 && 37 && 39 && 66 && 65)) {
@@ -70,11 +74,14 @@
             $('*').append('<p>lorem ipsum</p>')
             $('*').css('background-image','url(img/img2.png)');
             $('*').css('font-family', 'Times New Roman');
-            $('h1').css('color', 'maroon')
-            $('*').css('background-size','cover')
+            $('h1').css('color', 'maroon');
+            $('*').css('background-size','cover');
 
-            $('h1').html("Changed this").css({"text-align": "center", "color": "darkcyan"})
-            $('body').append("<p style='font-family: AppleGothic'>Hello There</p>")
+
+            $('h1').html("Cool huh").css({"text-align": "center", "color": "darkcyan"})
+            $('body').append("<p style='font-family: AppleGothic'>Cool Find</p>")
+
+
 
 
        //Works but isn't seperate from other code//
