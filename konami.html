@@ -29,7 +29,12 @@
         h1 {
             font-family: Apple Chancery, cursive;
         }
-
+     /*   h1:hover {
+            color: silver;
+        }*/
+    .highlight {
+        color:red;
+    }
            body {
                background-image: url("img/img1.png");
            }
@@ -76,6 +81,9 @@
             $('*').css('font-family', 'Times New Roman');
             $('h1').css('color', 'maroon');
             $('*').css('background-size','cover');
+          /*  $('h1').click(function(){
+                $('this').toggleClass("heading")
+            })*/
 
 
             $('h1').html("Cool huh").css({"text-align": "center", "color": "darkcyan"})
