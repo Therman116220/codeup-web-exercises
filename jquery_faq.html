@@ -43,7 +43,7 @@
 <button id="toggle">invisible</button>
 <h3>H3</h3>
 <ul>
-    <li style="font-weight: bolder">a</li>
+    <li style="font-weight: bold">a</li>
     <li>b</li>
     <li>c</li>
 </ul>
@@ -74,10 +74,8 @@
        });
 
        $("h3").click(function () {
-           $("li").css("font-weight","bolder")
-            $("li").css("color","brown")
-            $("h3").css("color","silver")
-            $("h3").css("font-family","Luxurious Roman, cursive")
+           $("li").css({"font-weight":"bolder", "color":"brown"})
+           $("h3").css({"font-family": "Luxurious Roman, cursive", "color": "silver"})
         });
        //Grabs li, and using $('')first().css('','') change first li
         $("li").click(function () {
