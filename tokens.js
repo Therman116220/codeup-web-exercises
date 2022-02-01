@@ -1,2 +1,2 @@
 const WEATHERMAP_TOKEN = '87a402c5bf4ec7fd2f6343a88f699f87'
-const MAP_TOKEN = ''ush
+const MAP_TOKEN = ''

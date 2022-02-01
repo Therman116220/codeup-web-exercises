@@ -108,9 +108,8 @@ console.log(isTwo(random));
 
 function calculateTip(tipPercent, totalBill){
     return tipPercent*totalBill;
-
-
-            }
+}
+calculateTip(20,100);
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
