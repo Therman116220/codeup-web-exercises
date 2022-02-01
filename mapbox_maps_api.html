@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center">My First Mapbox Map!</h1>
+
+<button class="btn-one">5X</button>
+<button class="btn-two">10X </button>
+<button class="btn-three">15X </button>
+
+<script src="./mapbox-geocoder-utils.js"></script>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = "pk.eyJ1IjoidGhlcm1hbi1oYXluZXMiLCJhIjoiY2t5eGhneDM4MGlrbzJ1bXc4aHJobzd6YyJ9.0Ux50psEuwq0uu3c0uei8w";
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        /*Reminder to flip the coordinates*/
+        center: [ -98.49194643120862, 29.424149304612275]
+    });
+
+
+$(document).ready(function() {
+
+
+    $('btn-one').click(function(e){
+        map.flyTo({zoom:5})
+    });
+    $('btn-two').click(function(e){
+        map.flyTo({zoom:10})
+    });
+    $('btn-three').click(function(e){
+        map.flyTo({zoom:15});
+    })
+});
+
+
+
+
+</script>
+<footer>
+
+</footer>
+</body>
+</html>

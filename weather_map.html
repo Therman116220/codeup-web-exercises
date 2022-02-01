@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Weather Map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+</head>
+
+<style>
+    .main {
+    width: 80%;
+    height: 500px;
+    border: solid black 2px;
+        color: darkorange;
+}
+    body {
+    background-color: #848487;
+}
+ nav {
+font-family: FreeMono, monospace;
+ }
+ a {
+     color: gold;
+     text-decoration: none;
+     display: flex;
+     justify-content: space-evenly;
+ }
+ a:hover {
+     color: goldenrod;
+     text-decoration: none;
+ }
+ .title {
+     color: whitesmoke;
+     font-weight: bolder;
+     font-size: 55px;
+     padding-top: 8px;
+ }
+ .title:hover {
+
+ }
+ #image {
+
+ }
+ #image:hover {
+     transform: scale(1.1);
+ }
+
+</style>
+
+<!--NAV ONE-->
+<nav class="navbar navbar-dark bg-dark">
+    <img id="image" src="https://img.icons8.com/doodle/48/000000/tsunami.png"/><p class="title">Blunder News</p> <a href="#">Home</a>
+    <a href="#">Weather</a>
+    <a href="#">Breaking News</a>
+</nav>
+
+<!--Font Awesome-->
+<a style="display: none" href="https://icons8.com/icon/KRnLq8idCI97/tsunami">Tsunami icon by Icons8</a>
+
+
+
+<!--NAV TWO-->
+  <nav id="nav-two" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Map</a>
+                    </li>
+
+                    <form class="d-flex">
+                        <input style="margin-left:710px" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<body>
+<script>
+    var name = prompt("Hey there visiter! Whats your name?");
+    $('h1').append(<h1> 'Hello there' + ${name} </h1>);
+</script>
+<main id="main">
+<h1 style="text-align: center">Hello there</h1>
+</main>
+<footer>
+
+
+</footer>
+<script src="tokens.js"></script>
+<script>
+    $.get(https://api.openweathermap.org/data/2.5/onecall?lat={-98.4916}&lon={29.4252}&exclude={part}&appid={'87a402c5bf4ec7fd2f6343a88f699f87'}
+    })
+
+$('#image').click(function () {
+    $('.title').css('color','yellow');
+});
+
+</script>
+</body>
+</html>

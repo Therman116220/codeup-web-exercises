@@ -85,9 +85,10 @@ var random = Math.floor((Math.random() * 3) + 1);
 
 function isTwo(number){
     if (number != 2){
-        return false;
+
+    } else {
+        console.log("2");
     }
-    return true;
 }
 
 isTwo(random);

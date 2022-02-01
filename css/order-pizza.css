@@ -2,6 +2,7 @@
 .align-nav {
     display: flex;
     flex-direction: row;
+
 }
 button {
   /*  display: flex;

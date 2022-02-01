@@ -11,8 +11,41 @@
 </head>
 <body>
 <h1 class="heading">Header</h1>
+<p>where did i go</p>
+<li>lorem*4</li>
+<li></li>
+<li></li>
+<li></li>
+
+<p>Toggling</p>
+
+<button id="button">Toggle between hide() and show()</button>
+
 <script>
-    $('heading').css('background-color','blue');
+
+
+
+    $(document).ready(function(){
+        $("#button").click(function(){
+            $("p").toggle();
+        });
+    });
+
+
+
+
+<p>Toggling</p>
+
+<button>Toggle between hide() and show()</button>
+
+
+
+
+
+
+
+
+$('heading').css('background-color','blue');
 </script>
 <script src="/js/jquery-2.2.4.js" integrity=""></script>
 <script src="/js/jquery.js"></script>
