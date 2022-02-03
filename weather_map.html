@@ -159,7 +159,7 @@
             .container{
                 padding: 20px;
             }
-
+/*How I got my days of the week to SCROLL!!!!!*/
             .future-forecast{
                 justify-content: start;
                 /*align-items: none;*/
@@ -215,10 +215,23 @@
             font-size: 55px;
             padding-top: 8px;
         }
+        .title:hover {
+            color: yellow;
+        }
+        #image:hover {
+            transform: scale(1.2);
+
+        }
 
         #footer-nav {
             width: 100%;
             height: 50px;
+        }
+        #map {
+            z-index: 1000;
+            height: 100px;
+            width: 100px;
+            margin-left: 100px;
         }
     </style>
     <!--NAV ONE-->
@@ -249,7 +262,7 @@
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Donate</a>
+                        <a class="nav-link" href="#">News </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Map</a>
@@ -289,8 +302,11 @@
             <div id="country" class="country">USA</div>
         </div>
     </div>
-
+    <!--MY UN-FUNCTIONAL MAP-->
     <div id='map'></div>
+    <button id="btnName" type="button" class="btn btn-primary mb-3">
+        Submit
+    </button>
 
 
 </div>
@@ -357,50 +373,6 @@
         center: [-98.4916, 29.4252]
     });
 
-    const marker= new mapboxgl.Marker().setLngLat([-98.4664613578, 29.463483591366])
-        .addTo(map);
-
-    const nav = new mapboxgl.NavigationControl({
-        showZoom:true
-    });
-    map.addControl(nav, 'bottom-right');
-
-    var koiInfo = {
-        address: "4051 Broadway, San Antonio, TX 78209",
-        popupHTML: "<p>Koi Kawa Sushi Rocks!</p>"
-    };
-
-    function placeMarkerAndPopup(info, token, map) {
-        geocode(info.address, token).then(function(coordinates) {
-            var popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML);
-            var marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .addTo(map)
-                .setPopup(popup);
-            popup.addTo(map);
-        })
-
-    }
-    map.on('click', (e) => {
-        placeMarkerAndPopup(koiInfo, accessToken, map);
-    });
-    $(document).ready(function() {
-        $('#zoom5').click(function (e) {
-            map.flyTo({zoom: 5});
-            $('#zoom10').click(function (e) {
-                map.flyTo({zoom: 10});
-                $('#zoom15').click(function (e) {
-                    map.flyTo({zoom: 15});
-                })
-            });
-        });
-    });
-
-
-
-
-
     const timeEl = document.getElementById('time');
     const dateEl = document.getElementById('date');
     const currentWeatherItemsEl = document.getElementById('current-weather-items');
@@ -413,8 +385,6 @@
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-
-    const API_KEY ='87a402c5bf4ec7fd2f6343a88f699f87';
 
     setInterval(() => {
         const time = new Date();
@@ -432,88 +402,41 @@
 
     }, 1000);
 
-    getWeatherData()
-    function getWeatherData () {
-        navigator.geolocation.getCurrentPosition((success) => {
 
-            let {latitude, longitude } = success.coords;
+    $(document).ready(function () {
 
-            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+        let lat = 29.61;
+        let lon = -97.22;
 
-                console.log(data)
-                showWeatherData(data);
-            })
+        mapboxgl.accessToken = "pk.eyJ1IjoidGhlcm1hbi1oYXluZXMiLCJhIjoiY2t5eGhneDM4MGlrbzJ1bXc4aHJobzd6YyJ9.0Ux50psEuwq0uu3c0uei8w";
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 8,
+            center: [lon, lat]
+        });
 
-        })
-    }
-
-    function showWeatherData (data){
-        let {humidity, pressure, sunrise, sunset, wind_speed} = data.current;
-
-        timezone.innerHTML = data.timezone;
-        countryEl.innerHTML = data.lat + 'N ' + data.lon+'E'
-
-        currentWeatherItemsEl.innerHTML =
-            `<div class="weather-item">
-        <div>Humidity</div>
-        <div>${humidity}%</div>
-    </div>
-    <div class="weather-item">
-        <div>Pressure</div>
-        <div>${pressure}</div>
-    </div>
-    <div class="weather-item">
-        <div>Wind Speed</div>
-        <div>${wind_speed}</div>
-    </div>
-    <div class="weather-item">
-        <div>Sunrise</div>
-        <div>${window.moment(sunrise * 1000).format('HH:mm a')}</div>
-    </div>
-    <div class="weather-item">
-        <div>Sunset</div>
-        <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
-    </div>
-
-
-    `;
-
-        let otherDayForcast = ''
-        data.daily.forEach((day, idx) => {
-            if(idx == 0){
-                currentTempEl.innerHTML = `
-            <img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" alt="weather icon" class="w-icon">
-            <div class="other">
-                <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
-                <div class="temp">Night - ${day.temp.night}&#176;C</div>
-                <div class="temp">Day - ${day.temp.day}&#176;C</div>
-            </div>
-
-            `
-            }else{
-                otherDayForcast += `
-            <div class="weather-forecast-item">
-                <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
-                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - ${day.temp.night}&#176;C</div>
-                <div class="temp">Day - ${day.temp.day}&#176;C</div>
-            </div>
-
-            `
-            }
-        })
-
-
-        weatherForecastEl.innerHTML = otherDayForcast;
-    }
-
-
+     /*   function getWeather(lat, lng) {
+            $.get("https://api.openweathermap.org/data/2.5/forecast", {
+                APPID: WEATHERMAP_TOKEN,
+                lat: lat,
+                lon: lng,
+               /!*CHANGES UNITS FROM KELVIN TO IMPERIAL*!/
+                units: "imperial"
+            }).done(function (data) {
+                console.log(data);
+                let cards = $(".weather-forecast-item");
+                let city = $("");
+                cards.html("");
+                city.html("");
+                city.append(`${data.name}`);
+                console.log(data);*/
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="script.js"></script>
-<footer id='footer-nav' style="background-color: grey;">
+
+<script src="mapbox-geocoder-utils.js"></script>
+<footer id='footer-nav' style="'background-color: grey;">
 </footer>
 </body>
 </html>
