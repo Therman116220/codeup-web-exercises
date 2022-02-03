@@ -1,116 +1,240 @@
-<!doctype html>
+
+<!-- Will Add Celsius &#176; -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Weather Map</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    </head>
 
-<style>
-   /*Manipulates*/
-    #map {
-        width: 200px;
-       height: 200px;
-        margin-bottom: 200px;
-        padding-top: 340px;
-    }
-    main {
+    <style type="text/css">
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            /* background:url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');*/
+            background-repeat: no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background-color: grey;
+        }
+
+        .container{
+            padding: 20px 70px;
+            color:#fff;
+        }
+
+        .current-info{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .date-container{
+            font-weight: 100;
+        }
+        .date-container .time{
+            font-size: 70px;
+        }
+
+        .date-container #am-pm{
+            font-size: 30px;
+            margin-left: 20px;
+        }
+
+        .date-container .date{
+            font-size: 30px;
+        }
+
+        .place-container{
+            text-align: end;
+        }
+
+        .place-container .time-zone{
+            font-size: 30px;
+            font-weight: 100;
+        }
+
+        .place-container .country{
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .current-info .others{
+            display: flex;
+            flex-direction: column;
+            background: rgba(24,24,27, 0.6);
+            padding:20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid #eee;
+        }
+
+        .current-info .others .weather-item{
+            display: flex;
+            justify-content: space-between;
+        }
+
+/*Background For Days Of The Week*/
+        .future-forecast{
+            background: rgba(24,24,27,0.9);
+            padding: 25px;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            color:white;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            overflow-y: hidden;
+        }
+/*Border for 5 days of the week ''*/
+        .future-forecast .today{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 8px solid #eee;
+            border-radius: 10px;
+            padding:15px;
+            padding-right: 40px;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.2)
+        }
+
+        .future-forecast .today .day{
+            padding: 5px 15px;
+            background: #3c3c44;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .future-forecast .today .temp{
+            font-size: 18px;
+            padding-top: 15px;
+        }
+
+        .future-forecast .weather-forecast{
+            display: flex;
+        }
+
+        .weather-forecast .weather-forecast-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.2)
+        }
+
+        .weather-forecast .weather-forecast-item .day{
+            padding: 5px 15px;
+            background: #3C3C44;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .weather-forecast .weather-forecast-item .temp{
+            font-weight: 100;
+            font-size: 12px;
+        }
+
+        /*Less Than 730px will be affected*/
+        @media only screen and  (max-width:730px){
+
+            .container{
+                padding: 20px;
+            }
+
+            .future-forecast{
+                justify-content: start;
+                /*align-items: none;*/
+                overflow-y: scroll;
+            }
+
+            .future-forecast .today .temp{
+                font-size: 16px;
+            }
+
+            .date-container .time{
+                font-size: 50px;
+            }
+
+            .date-container #am-pm{
+                font-size: 20px;
+            }
+
+            .date-container .date{
+                font-size: 20px;
+            }
+
+            .place-container{
+                text-align: end;
+                margin-top: 15px;
+            }
+
+            .place-container .time-zone{
+                font-size: 20px;
+            }
+
+            .current-info .others{
+                padding: 12px;
+            }
+
+            .current-info .others .weather-item{
+                font-size: 14px;
+            }
+
+        }
+
+        @media only screen and (max-width: 1400px){
+            .future-forecast{
+                justify-content: start;
+                /*align-items: none;*/
+                overflow-x: scroll;
+            }
+        }
+
+        .title {
+            color: whitesmoke;
+            font-weight: bolder;
+            font-size: 55px;
+            padding-top: 8px;
+        }
+
+        #footer-nav {
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+    <!--NAV ONE-->
+    <nav class="navbar navbar-dark bg-dark">
+        <img id="image" src="https://img.icons8.com/doodle/48/000000/tsunami.png"/><p class="title">Blunder News</p> <a href="#">Home</a>
+        <a href="#">Weather</a>
+        <a href="#">Breaking News</a>
+    </nav>
+
+    <!--Font Awesome-->
+    <a style="display: none" href="https://icons8.com/icon/KRnLq8idCI97/tsunami">Tsunami icon by Icons8</a>
 
 
-    height: 500px;
-    border: solid black 20px;
-    color: darkorange;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-    body {
-    background-color: #848487;
-}
- nav {
-font-family: FreeMono, monospace;
- }
- a {
-     color: gold;
-     text-decoration: none;
-     display: flex;
-     justify-content: space-evenly;
- }
- a:hover {
-     color: goldenrod;
-     text-decoration: none;
- }
- .title {
-     color: whitesmoke;
-     font-weight: bolder;
-     font-size: 55px;
-     padding-top: 8px;
- }
- .title:hover {
 
- }
- #image {
-
- }
- #image:hover {
-     transform: scale(1.1);
- }
- #footer {
-     width: 100%;
-     height: 210px;
-     border: solid whitesmoke 4px;
-     background-color: #f3f3f3;
-     display: flex;
-     justify-self: end;
-     position: relative;
-     align-self: flex-end;
- }
- footer img {
-     height: 40px;
-     width: 40px;
- }
-   .weather-forecast .weather-forecast-item {
-       display: flex;
-       position: relative;
-       flex-direction: row;
-       align-items: right;
-       justify-content: center;
-       margin: 0 10px 0 10px;
-       border: 2px solid whitesmoke;
-       padding: 8px;
-       border-radius: 10px;
-       background: rgba(0, 0, 0, 0.2);
-       width: 25%;
-   }
-   .weather-forecast .weather-forecast-item:hover {
-    color: whitesmoke;
-   }
-   .container-one {
-       margin-left: 20px;
-   }
-   .nav-three {
-   display: flex;
-   justify-content: space-evenly;
-   }
-
-</style>
-
-<!--NAV ONE-->
-<nav class="navbar navbar-dark bg-dark">
-    <img id="image" src="https://img.icons8.com/doodle/48/000000/tsunami.png"/><p class="title">Blunder News</p> <a href="#">Home</a>
-    <a href="#">Weather</a>
-    <a href="#">Breaking News</a>
-</nav>
-
-<!--Font Awesome-->
-<a style="display: none" href="https://icons8.com/icon/KRnLq8idCI97/tsunami">Tsunami icon by Icons8</a>
-
-
-
-<!--NAV TWO-->
-  <nav id="nav-two" class="navbar navbar-expand-lg navbar-light bg-light">
+    <!--NAV TWO-->
+    <nav id="nav-two" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,17 +263,43 @@ font-family: FreeMono, monospace;
             </div>
         </div>
     </nav>
-<!--End Of Nav-->
-
+    <!--End Of Nav-->
+</head>
 <body>
-<main id="main">
-<!--5 days of the week-->
-    <div class="container-one">
-    <div class="weather-forecast">
-    <div class="day" id="current-temp">
+
+<div class="container">
+    <div class="current-info">
+        <!-- Still need to make a container for time OR just move -->
+        <div class="date-container">
+            <div class="time" id="time">
+                12:35 <span id="am-pm">PM</span>
+            </div>
+            <div class="date" id="date">
+                Monday, Feb 1st
+            </div>
+
+            <div class="others" id="current-weather-items">
+
+
+            </div>
+        </div>
+
+        <div class="place-container">
+            <div class="time-zone" id="time-zone">Central</div>
+            <div id="country" class="country">USA</div>
+        </div>
+    </div>
+
+    <div id='map'></div>
+
+
+</div>
+
+<div class="future-forecast">
+    <div class="today" id="current-temp">
         <img src="https://img.icons8.com/doodle/48/000000/cloud-lighting.png" alt="weather icon" class="w-icon">
         <div class="other">
-            <div class="day">Monday</div>
+            <div class="day" id='mon'>Monday</div>
             <div class="temp">Night - 25.6&#176; C</div>
             <div class="temp">Day - 35.6&#176; C</div>
         </div>
@@ -160,94 +310,210 @@ font-family: FreeMono, monospace;
             <div class="day">Tue</div>
             <img src="https://img.icons8.com/doodle/48/000000/cloud-lighting.png" alt="weather icon" class="w-icon">
             <div class="temp">Night - 25.6&#176; C</div>
-            <div class="temp"> Day - 35.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
         </div>
         <div class="weather-forecast-item">
             <div class="day">Wed</div>
             <img src="https://img.icons8.com/doodle/48/000000/cloud-lighting.png" alt="weather icon" class="w-icon">
-            <!--<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
             <div class="temp">Night - 25.6&#176; C</div>
-            <div class="temp"> Day - 35.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
         </div>
         <div class="weather-forecast-item">
             <div class="day">Thur</div>
             <img src="https://img.icons8.com/doodle/48/000000/cloud-lighting.png" alt="weather icon" class="w-icon">
-            <!--<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
             <div class="temp">Night - 25.6&#176; C</div>
-            <div class="temp"> Day - 35.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
         </div>
         <div class="weather-forecast-item">
             <div class="day">Fri</div>
             <img src="https://img.icons8.com/doodle/48/000000/cloud-lighting.png" alt="weather icon" class="w-icon">
-            <!--<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
             <div class="temp">Night - 25.6&#176; C</div>
-            <div class="temp"> Day - 35.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
         </div>
         <div class="weather-forecast-item">
             <div class="day">Sat</div>
             <img src="https://img.icons8.com/doodle/48/000000/cloud-lighting.png" alt="weather icon" class="w-icon">
             <div class="temp">Night - 25.6&#176; C</div>
-            <div class="temp"> Day - 35.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
         </div>
+
     </div>
 </div>
-    </div>
-</main>
 <script>
-    var name = prompt("Hey there visiter! Whats your name?");/*
-    $('h1').append(<h1> 'Hello there' + ${"name"} </h1>);*/
-</script>
 
-<button id="f-button">Display</button>
-<footer id="footer">
-   <div class= 'nav-three'>
-    <img src="https://img.icons8.com/ios/48/000000/facebook-new.png"/>    <!--<p>-->Add Us On <strong>Facebook</strong><!--</p>-->
-        <a  style="display: none" href="https://icons8.com/icon/118468/facebook">Facebook icon by Icons8</a><br>
-
-    <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v2.png"/>    <!--<p>-->Chat with us on <strong>Twitter</strong><!--</p>-->
-    <a  style="display: none" href="https://icons8.com/icon/118468/facebook">Facebook icon by Icons8</a><br>
-
-    <img src="https://img.icons8.com/external-justicon-lineal-justicon/50/000000/external-linkedin-social-media-justicon-lineal-justicon.png"/>    <!--<p>-->Add Us On <strong>Linkdn</strong><!--</p>-->
-    <a  style="display: none" href="https://icons8.com/icon/118468/facebook">Facebook icon by Icons8</a>
-   </div>
-    <div id='map'></div>
-
-</footer>
-
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-<script src="tokens.js"></script>
+    <label>ZOOM</label>
+    <button id="zoom5" value="zoom x 5">X 5   </button>
+    <button id="zoom10" value="zoom x 10">X 10</button>
+    <button id="zoom15" value="zoom x 15">X 15</button>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="./mapbox-geocoder-utils.js"></script>
 <script>
-   /* $.get(https://api.openweathermap.org/data/2.5/onecall?lat={-98.4916}&lon={29.4252}&exclude={part}&appid={'87a402c5bf4ec7fd2f6343a88f699f87'}
-    })
-*/
 
-    mapboxgl.accessToken = "pk.eyJ1IjoidGhlcm1hbi1oYXluZXMiLCJhIjoiY2t5eGhneDM4MGlrbzJ1bXc4aHJobzd6YyJ9.0Ux50psEuwq0uu3c0uei8w";
+    var accessToken = "pk.eyJ1IjoidGhlcm1hbi1oYXluZXMiLCJhIjoiY2t5eGhneDM4MGlrbzJ1bXc4aHJobzd6YyJ9.0Ux50psEuwq0uu3c0uei8w";
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 10,
-        center: [-98.4919, 29.4239]
+        center: [-98.4916, 29.4252]
     });
-    const marker= new mapboxgl.Marker().setLngLat([-98.491931, 29.423926])
+
+    const marker= new mapboxgl.Marker().setLngLat([-98.4664613578, 29.463483591366])
         .addTo(map);
+
     const nav = new mapboxgl.NavigationControl({
         showZoom:true
     });
+    map.addControl(nav, 'bottom-right');
+
+    var koiInfo = {
+        address: "4051 Broadway, San Antonio, TX 78209",
+        popupHTML: "<p>Koi Kawa Sushi Rocks!</p>"
+    };
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        })
+
+    }
+    map.on('click', (e) => {
+        placeMarkerAndPopup(koiInfo, accessToken, map);
+    });
+    $(document).ready(function() {
+        $('#zoom5').click(function (e) {
+            map.flyTo({zoom: 5});
+            $('#zoom10').click(function (e) {
+                map.flyTo({zoom: 10});
+                $('#zoom15').click(function (e) {
+                    map.flyTo({zoom: 15});
+                })
+            });
+        });
+    });
 
 
-/*
-$('#image').click(function () {
-    $('.title').css('color','yellow');
-});
-*/
-$('#f-button').click(function () {
-    $('#footer').css('display','none')
-});
 
-   /*$('#load_list').click(function() {
-        $('ul').append('<li><a href="#">Click here</a></li>');
-        return false;
-    });*/
+
+
+    const timeEl = document.getElementById('time');
+    const dateEl = document.getElementById('date');
+    const currentWeatherItemsEl = document.getElementById('current-weather-items');
+    const timezone = document.getElementById('time-zone');
+    const countryEl = document.getElementById('country');
+    const weatherForecastEl = document.getElementById('weather-forecast');
+    const currentTempEl = document.getElementById('current-temp');
+
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
+    const API_KEY ='87a402c5bf4ec7fd2f6343a88f699f87';
+
+    setInterval(() => {
+        const time = new Date();
+        const month = time.getMonth();
+        const date = time.getDate();
+        const day = time.getDay();
+        const hour = time.getHours();
+        const hoursIn12HrFormat = hour >= 13 ? hour %12: hour
+        const minutes = time.getMinutes();
+        const ampm = hour >=12 ? 'PM' : 'AM'
+
+        timeEl.innerHTML = (hoursIn12HrFormat < 10? '0'+hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0'+minutes: minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
+
+        dateEl.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
+
+    }, 1000);
+
+    getWeatherData()
+    function getWeatherData () {
+        navigator.geolocation.getCurrentPosition((success) => {
+
+            let {latitude, longitude } = success.coords;
+
+            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+
+                console.log(data)
+                showWeatherData(data);
+            })
+
+        })
+    }
+
+    function showWeatherData (data){
+        let {humidity, pressure, sunrise, sunset, wind_speed} = data.current;
+
+        timezone.innerHTML = data.timezone;
+        countryEl.innerHTML = data.lat + 'N ' + data.lon+'E'
+
+        currentWeatherItemsEl.innerHTML =
+            `<div class="weather-item">
+        <div>Humidity</div>
+        <div>${humidity}%</div>
+    </div>
+    <div class="weather-item">
+        <div>Pressure</div>
+        <div>${pressure}</div>
+    </div>
+    <div class="weather-item">
+        <div>Wind Speed</div>
+        <div>${wind_speed}</div>
+    </div>
+    <div class="weather-item">
+        <div>Sunrise</div>
+        <div>${window.moment(sunrise * 1000).format('HH:mm a')}</div>
+    </div>
+    <div class="weather-item">
+        <div>Sunset</div>
+        <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
+    </div>
+
+
+    `;
+
+        let otherDayForcast = ''
+        data.daily.forEach((day, idx) => {
+            if(idx == 0){
+                currentTempEl.innerHTML = `
+            <img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" alt="weather icon" class="w-icon">
+            <div class="other">
+                <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
+                <div class="temp">Night - ${day.temp.night}&#176;C</div>
+                <div class="temp">Day - ${day.temp.day}&#176;C</div>
+            </div>
+
+            `
+            }else{
+                otherDayForcast += `
+            <div class="weather-forecast-item">
+                <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
+                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+                <div class="temp">Night - ${day.temp.night}&#176;C</div>
+                <div class="temp">Day - ${day.temp.day}&#176;C</div>
+            </div>
+
+            `
+            }
+        })
+
+
+        weatherForecastEl.innerHTML = otherDayForcast;
+    }
+
+
+
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="script.js"></script>
+<footer id='footer-nav' style="background-color: grey;">
+</footer>
 </body>
 </html>
