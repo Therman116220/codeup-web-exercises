@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    foodoptions.forEach(function (restaurant) {
+        restaurant.specialty + restaurant.specialty + "y";
+    });
+
+    // NEW WAY /W MAP
+
+    let newArray = foodOptions.mpa(restuarant => restuarant.specialty = restuarant.specialty + "y")
+    console.log(newArray);
+    console.log(foodOptions);
+
+    let names = foodOptions.map(restuarant => "<li>" + restuarant.name + "</li>")
+    console.log(names)
+
+    names.forEach(name => document.querySelector("#restuarant").innerHTML += name);
+
+
+    // FILTER //
+
+    // creates a new array with all elements that pass the test implemented by the provided function.
+
+
+    let mexicanFood = foodOptions.filter(restuarant => restuarant.specialty === "mexican-food");
+
+    console.log(mexicanFood);
+
+    let mexFood = [];
+
+    foodOptions.forEach(function(restuarant) {
+        if(restuarant.specialty === "mexican-food") {
+            mexFood.push(restuarant);
+        }
+    })
+    console.log(mexFood);
+
+
+    //REDUCE //
+
+   let grades = [91, 88, 76, 88, 68, 95];
+
+    // let gradesTotoal = grades.reduce(((previousValue, currentValue) => previousValue + currentValue)) / grades.length;
+
+    let gradesTotal = grades.reduce(function (previousValue, currentValue) {
+        return previousValue + currentValue;
+    }, 100)
+    console.log(gradesTotal)
+</script>
+</body>
+</html>
