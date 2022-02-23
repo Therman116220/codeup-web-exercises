@@ -1,2 +1,3 @@
 const WEATHERMAP_TOKEN = '87a402c5bf4ec7fd2f6343a88f699f87'
-const MAP_TOKEN = ''
+const MAP_TOKEN = 'pk.eyJ1IjoidGhlcm1hbi1oYXluZXMiLCJhIjoiY2t5eGhneDM4MGlrbzJ1bXc4aHJobzd6YyJ9.0Ux50psEuwq0uu3c0uei8w'
+const  GIT_TOKEN= "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"

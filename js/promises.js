@@ -138,7 +138,7 @@ let wait = num => new Promise( (resolve, reject) => {
         }, num)
     }
 })
-
+//implementation of NUM
 wait(1000).then( () => console.log('Loading...'));
 wait(1500).then( () => console.log('[.         ]'));
 wait(2000).then( () => console.log('[..        ]'));
@@ -150,7 +150,7 @@ wait(4500).then( () => console.log('[.......   ]'));
 wait(5000).then( () => console.log('[........  ]'));
 wait(5500).then( () => console.log('[......... ]'));
 wait(6000).then( () => console.log('[..........]'));
-wait(6000).then( () => console.log('[Loading Complete]'));
+wait(6200).then( () => console.log('[Loading Complete]'));
 wait(6500).then( () => console.log('You\'ll see this after 1 second'));
 
 

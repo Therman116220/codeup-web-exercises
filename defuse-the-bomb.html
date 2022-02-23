@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Defuse the BOM</title>
+
+</head>
+<body>
+
+<h2 id="message">This BOM will self-destruct in <span id="timer">10</span> seconds...</h2>
+<button id="defuser">Defuse the BOM</button>
+
+
+
+<script>
+    (function () {
+        "use strict";
+
+        let detonationTimer = '5';
+        let interval = 1000;
+        // TODO: This function needs to be called once every second
+
+        let countdown = setInterval(updateTimer, interval);
+
+        function updateTimer() {
+            if (detonationTimer === 0) {
+                alert('EXTERMINATE!');
+                document.body.innerHTML = '';
+            } else if (detonationTimer > 0) {
+                document.getElementById('timer').innerHTML = detonationTimer;
+            }
+
+            detonationTimer--;
+        }
+
+
+        // TODO: When this function runs, it needs to cancel the interval/timeout for updateTimer()
+
+        function defuseTheBOM() {
+            clearInterval(countdown);
+        }
+    });
+
+
+
+
+</script>
+</body>
+</html>
