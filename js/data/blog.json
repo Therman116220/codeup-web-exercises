@@ -1,0 +1,19 @@
+[
+  {
+    "title": "The Blog",
+
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+
+    "categories": [ "Ip-Man", " Turkish", " Military", " Family" ],
+    "date": "Dec 17, 1997"
+  },
+
+
+  {
+  "title": "The Comic",
+  "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+  "categories": ["Books", " Comics", " Posters", " Fan Merch"
+  ],
+  "date": "July 26, 2099"
+}
+]
