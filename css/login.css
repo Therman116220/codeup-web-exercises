@@ -66,7 +66,7 @@ fieldset {
     /* The text color of this element should be white and bold */
     border: solid 1px lightgrey ;
     /* The border of this element should be 1px, and its color should be light grey */
-    background-color: #0fb784;
+    background-color: #F3F3F3;
 }
 
 .form-control {
