@@ -4,22 +4,22 @@ function gradingScale(pointCount) {
     } else if (pointCount < 90 && pointCount >= 80) {
         console.log("B");
     } else if (pointCount < 80 && pointCount >= 70) {
-        console.log("C"); {
-        } else if (pointCount <70 && pointCount >= 60)
-            console.log("D"); {
-        } else
-        console.log("You failed")
+        console.log("C");
+    } else if (pointCount < 70 && pointCount >= 60) {
+        console.log("D");
+    } else
+        console.log("You failed");
     }
 gradingScale(91);
 
-
+let hour = 14;
     if (hour < 12 && hour >= 6) {
     console.log("Good Morning");
-    } else if (hour < 18 > && >= 12) {
+    } else if (hour < 18  &&  hour >= 12) {
         console.log("Good Afternoon");
     } else
         console.log("Good Evening");
-}
+
 
 
 
@@ -63,7 +63,7 @@ console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+let random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
