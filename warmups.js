@@ -20,7 +20,7 @@ function wereTheyReallyAGoodDog(){
 }
  */
 
-let weather = "";
+let weather = "rain";
 
 if (weather === "sunny") {
     console.log("wear shorts")
@@ -32,7 +32,7 @@ if (weather === "sunny") {
     console.log("nothing worthy of note, wear whatever")
 }
 
-
+console.log(weather);
 
 
 /*let name = "Mike";
@@ -49,29 +49,29 @@ if (name === "Mike") {
     }
 }
  */
-
-let myAge = 21;
+//AGE CHECKER
+let statedAge = 21;
 let actualAge = 21;
-  function checkAge(givenAge, actualAge) {
-    console.log(givenAge)
-      if (givenAge !== actualAge) {
-        console.log("you lie");
+  function checkAge(statedAge, actualAge) {
+      if (statedAge !== actualAge) {
+        console.log("WHY MUST YOU tell these liess!!!");
     } else {
-        console.log("You got my age right")
+        console.log("Honest about your age huh, stand up guy");  // How random
     }
 }
+checkAge(statedAge, actualAge);
 
-checkAge(myAge, actualAge);
-
+  //GRADE CHECKER
 var A = 90;
+var A extend
 var B = 80;
 var C = 70;
 var D = 60;
-var Axel = A;
+var Axel = A;🚨
 var Chris = B;
-var Max = C;
+var Max = C;🚨
 var Joseph = D;
-var Trix = A;
+var Trix = A;🚨
   function gradeChecker(Axel,Chris, Max, Joseph, Trix) {
 
   }
@@ -106,40 +106,6 @@ function letterGrade(studentG) {
     }
 }
 letterGrade(88)
-
-
-// 4 === "4" ? console.log("matches") : console.log("not matches");
-
-//let weather = "sunny"
-//let temp == "90"
-//weather == "rainy"
-//        ? temp == "90"
-//        ? console.log("matches")
-//        : console.log("not matches")
-//        : console.log("Its sunny")
-
-
-
-//function letterGrade(studentGrade {
-//    if (studentGrade >= 90) {
-//       console.log("You did amazing")
-//    } else if (studentGrade >= 80) {
-//        console.log("You passed with a B")
-//    } else if (studentGrade >= 70)
-//        else {
-//            console.log("You must try again")
-//    }
-//    letterGrade(90)
-
-// })
-
-
-
-
-
-
-
-
 
 /*
 let numGrade = 80
