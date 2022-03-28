@@ -63,15 +63,14 @@ checkAge(statedAge, actualAge);
 
   //GRADE CHECKER
 var A = 90;
-var A extend
 var B = 80;
 var C = 70;
 var D = 60;
-var Axel = A;🚨
+var Axel = A;
 var Chris = B;
-var Max = C;🚨
+var Max = C;
 var Joseph = D;
-var Trix = A;🚨
+var Trix = A;
   function gradeChecker(Axel,Chris, Max, Joseph, Trix) {
 
   }
@@ -253,12 +252,12 @@ accepts the name of the bowling place (“ThEbEsTbOwLiNgPlAcEever”) and return
     let secondScore = 234;
     let thirdScore = 90;
 function bowling(score1, score2, score3) {
-    let average = (score1 + score2 +score3) /3;
+    let average = (score1 + score2 + score3) / 3;
     return average;
 
-
-    console.log(bowling(firstScore, secondScore, thirdScore));
 }
+    console.log(bowling(firstScore, secondScore, thirdScore));
+
 
 
 let score = 109;
@@ -268,15 +267,15 @@ let players = ["tom", "jerry", "garfield"];
 function findType(passedVar) {
     return typeof passedVar;
 }
-console.log(findType(isBowlingFun))};
-score name players
+console.log(findType(isBowlingFun));
+// score,name,players;
 console.log(findType(score));
 console.log(findType(name));
 console.log(findType(players));
 
 function myFunction(firstName,lastName) {
     return firstName + "" + lastName;
-};
+}
 console.log(myFunction("Therman", "Haynes"));
 
 
