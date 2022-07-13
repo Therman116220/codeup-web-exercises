@@ -37,12 +37,14 @@
     }
            body {
                background-image: url("img/img1.png");
+
+           background-color: #F3F3F3;
            }
     </style>
 </head>
 <body>
-<h1 id="heading" style="color: #f3f3f3;">Konami Code</h1>
-<h2></h2>
+<h1 id="heading" style="text-shadow: red -2px 0, cyan -2px 0">Konami Code</h1>
+
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
@@ -86,8 +88,8 @@
                                                                                          })*/
 
 
-            $('h1').html("Cool huh").css({"text-align": "center", "color": "darkcyan"})
-            $('body').append("<p style='font-family: AppleGothic'>Cool Find</p>")
+            $('h1').html("Cool huh").css({"text-align": "center"; text-shadow: red -2px 0, cyan -2px 0;}
+            $('body').append("<p style='font-family: AppleGothic;text-shadow: red -2px 0, cyan -2px 0'>Cool Find</p>")
 
 
 
@@ -98,7 +100,7 @@
     });
 
     //Styling //
-    $('body').css('background-color', 'black');
+ /*   $('body').css('background-color', 'black');*/
     $('h1').css('text-align', 'center');
     $('h1').css('padding-top', '340px');
     /* $('h1:hover').css('color','gold');*/

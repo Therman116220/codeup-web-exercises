@@ -7,7 +7,7 @@
     overflow: hidden;
     z-index: -100;
     width: 100%;*/
-}
+
 .align-nav {
     display: flex;
     flex-direction: row;
@@ -42,7 +42,7 @@ button {
     font-size: 40px;
     width: 2000px;
     height: 500px;
-}  
+}
 .container P {
     color: black;
     border: solid white 2px;
